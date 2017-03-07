@@ -1,0 +1,303 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 66.12     54.84    54.84 72399922     0.00     0.00  findList
+ 18.94     70.55    15.71 2140946943     0.00     0.00  compEQ
+  6.62     76.05     5.49      595     0.01     0.13  processPlainFile
+  3.50     78.95     2.90  5190208     0.00     0.00  findNode
+  1.44     80.14     1.20                             dumpListData
+  1.39     81.29     1.15 72399922     0.00     0.00  getHashValue
+  0.47     81.68     0.39        1     0.39     0.39  initializeFieldsTreeRecursive
+  0.42     82.03     0.35      595     0.00     0.01  updateTree
+  0.39     82.35     0.32 103545571     0.00     0.00  compLT
+  0.30     82.60     0.25 106967796     0.00     0.00  compEQ
+  0.13     82.71     0.11    59500     0.00     0.00  deleteList
+  0.10     82.79     0.08        1     0.08     0.38  processDictionary
+  0.06     82.84     0.05   304069     0.00     0.00  freeRBData
+  0.05     82.89     0.05  4886139     0.00     0.00  insertList
+  0.02     82.91     0.02   304069     0.00     0.00  insertNode
+  0.02     82.93     0.02        1     0.02     0.09  deleteTree
+  0.02     82.95     0.02        1     0.02     0.07  deleteTreeRecursive
+  0.02     82.97     0.02        1     0.02     0.02  initTree
+  0.01     82.98     0.01   304069     0.00     0.00  insertFixup
+  0.00     82.98     0.00  4886139     0.00     0.00  freeListData
+  0.00     82.98     0.00   288832     0.00     0.00  rotateLeft
+  0.00     82.98     0.00    59500     0.00     0.00  initList
+  0.00     82.98     0.00     2849     0.00     0.00  rotateRight
+  0.00     82.98     0.00      595     0.00     0.00  allocHashTable
+  0.00     82.98     0.00      595     0.00     0.00  deleteHashTable
+  0.00     82.98     0.00        2     0.00     0.00  menu
+  0.00     82.98     0.00        1     0.00    81.69  createTree
+  0.00     82.98     0.00        1     0.00     0.39  initializeFieldsTree
+  0.00     82.98     0.00        1     0.00    81.31  processTextFiles
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2016 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.01% of 82.98 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     98.6    0.00   81.78                 main [1]
+                0.00   81.69       1/1           createTree [2]
+                0.02    0.07       1/1           deleteTree [18]
+                0.00    0.00       2/2           menu [30]
+-----------------------------------------------
+                0.00   81.69       1/1           main [1]
+[2]     98.5    0.00   81.69       1         createTree [2]
+                0.00   81.31       1/1           processTextFiles [3]
+                0.08    0.30       1/1           processDictionary [13]
+-----------------------------------------------
+                0.00   81.31       1/1           createTree [2]
+[3]     98.0    0.00   81.31       1         processTextFiles [3]
+                5.49   71.75     595/595         processPlainFile [4]
+                0.35    3.22     595/595         updateTree [7]
+                0.00    0.39       1/1           initializeFieldsTree [11]
+                0.00    0.11     595/595         deleteHashTable [17]
+-----------------------------------------------
+                5.49   71.75     595/595         processTextFiles [3]
+[4]     93.1    5.49   71.75     595         processPlainFile [4]
+               54.84   15.71 72399922/72399922     findList [5]
+                1.15    0.00 72399922/72399922     getHashValue [10]
+                0.05    0.00 4886139/4886139     insertList [22]
+                0.00    0.00     595/595         allocHashTable [29]
+-----------------------------------------------
+               54.84   15.71 72399922/72399922     processPlainFile [4]
+[5]     85.0   54.84   15.71 72399922         findList [5]
+               15.71    0.00 2140946943/2140946943     compEQ [6]
+-----------------------------------------------
+               15.71    0.00 2140946943/2140946943     findList [5]
+[6]     18.9   15.71    0.00 2140946943         compEQ [6]
+-----------------------------------------------
+                0.35    3.22     595/595         processTextFiles [3]
+[7]      4.3    0.35    3.22     595         updateTree [7]
+                2.73    0.49 4886139/5190208     findNode [8]
+-----------------------------------------------
+                0.17    0.03  304069/5190208     processDictionary [13]
+                2.73    0.49 4886139/5190208     updateTree [7]
+[8]      4.1    2.90    0.52 5190208         findNode [8]
+                0.29    0.00 93879773/103545571     compLT [14]
+                0.23    0.00 97606066/106967796     compEQ [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      1.4    1.20    0.00                 dumpListData [9]
+-----------------------------------------------
+                1.15    0.00 72399922/72399922     processPlainFile [4]
+[10]     1.4    1.15    0.00 72399922         getHashValue [10]
+-----------------------------------------------
+                0.00    0.39       1/1           processTextFiles [3]
+[11]     0.5    0.00    0.39       1         initializeFieldsTree [11]
+                0.39    0.00       1/1           initializeFieldsTreeRecursive [12]
+-----------------------------------------------
+                              304068             initializeFieldsTreeRecursive [12]
+                0.39    0.00       1/1           initializeFieldsTree [11]
+[12]     0.5    0.39    0.00       1+304068  initializeFieldsTreeRecursive [12]
+                              304068             initializeFieldsTreeRecursive [12]
+-----------------------------------------------
+                0.08    0.30       1/1           createTree [2]
+[13]     0.5    0.08    0.30       1         processDictionary [13]
+                0.17    0.03  304069/5190208     findNode [8]
+                0.02    0.06  304069/304069      insertNode [19]
+                0.02    0.00       1/1           initTree [23]
+-----------------------------------------------
+                0.03    0.00 9665798/103545571     insertNode [19]
+                0.29    0.00 93879773/103545571     findNode [8]
+[14]     0.4    0.32    0.00 103545571         compLT [14]
+-----------------------------------------------
+                0.02    0.00 9361730/106967796     insertNode [19]
+                0.23    0.00 97606066/106967796     findNode [8]
+[15]     0.3    0.25    0.00 106967796         compEQ [15]
+-----------------------------------------------
+                0.11    0.00   59500/59500       deleteHashTable [17]
+[16]     0.1    0.11    0.00   59500         deleteList [16]
+                0.00    0.00 4886139/4886139     freeListData [25]
+-----------------------------------------------
+                0.00    0.11     595/595         processTextFiles [3]
+[17]     0.1    0.00    0.11     595         deleteHashTable [17]
+                0.11    0.00   59500/59500       deleteList [16]
+-----------------------------------------------
+                0.02    0.07       1/1           main [1]
+[18]     0.1    0.02    0.07       1         deleteTree [18]
+                0.02    0.05       1/1           deleteTreeRecursive [20]
+-----------------------------------------------
+                0.02    0.06  304069/304069      processDictionary [13]
+[19]     0.1    0.02    0.06  304069         insertNode [19]
+                0.03    0.00 9665798/103545571     compLT [14]
+                0.02    0.00 9361730/106967796     compEQ [15]
+                0.01    0.00  304069/304069      insertFixup [24]
+-----------------------------------------------
+                              304068             deleteTreeRecursive [20]
+                0.02    0.05       1/1           deleteTree [18]
+[20]     0.1    0.02    0.05       1+304068  deleteTreeRecursive [20]
+                0.05    0.00  304069/304069      freeRBData [21]
+                              304068             deleteTreeRecursive [20]
+-----------------------------------------------
+                0.05    0.00  304069/304069      deleteTreeRecursive [20]
+[21]     0.1    0.05    0.00  304069         freeRBData [21]
+-----------------------------------------------
+                0.05    0.00 4886139/4886139     processPlainFile [4]
+[22]     0.1    0.05    0.00 4886139         insertList [22]
+-----------------------------------------------
+                0.02    0.00       1/1           processDictionary [13]
+[23]     0.0    0.02    0.00       1         initTree [23]
+-----------------------------------------------
+                0.01    0.00  304069/304069      insertNode [19]
+[24]     0.0    0.01    0.00  304069         insertFixup [24]
+                0.00    0.00  288832/288832      rotateLeft [26]
+                0.00    0.00    2849/2849        rotateRight [28]
+-----------------------------------------------
+                0.00    0.00 4886139/4886139     deleteList [16]
+[25]     0.0    0.00    0.00 4886139         freeListData [25]
+-----------------------------------------------
+                0.00    0.00  288832/288832      insertFixup [24]
+[26]     0.0    0.00    0.00  288832         rotateLeft [26]
+-----------------------------------------------
+                0.00    0.00   59500/59500       allocHashTable [29]
+[27]     0.0    0.00    0.00   59500         initList [27]
+-----------------------------------------------
+                0.00    0.00    2849/2849        insertFixup [24]
+[28]     0.0    0.00    0.00    2849         rotateRight [28]
+-----------------------------------------------
+                0.00    0.00     595/595         processPlainFile [4]
+[29]     0.0    0.00    0.00     595         allocHashTable [29]
+                0.00    0.00   59500/59500       initList [27]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[30]     0.0    0.00    0.00       2         menu [30]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2016 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [29] allocHashTable          [5] findList               [22] insertList
+  [15] compEQ                  [8] findNode               [19] insertNode
+   [6] compEQ                 [25] freeListData           [30] menu
+  [14] compLT                 [21] freeRBData             [13] processDictionary
+   [2] createTree             [10] getHashValue            [4] processPlainFile
+  [17] deleteHashTable        [27] initList                [3] processTextFiles
+  [16] deleteList             [23] initTree               [26] rotateLeft
+  [18] deleteTree             [11] initializeFieldsTree   [28] rotateRight
+  [20] deleteTreeRecursive    [12] initializeFieldsTreeRecursive [7] updateTree
+   [9] dumpListData           [24] insertFixup
