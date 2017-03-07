@@ -40,6 +40,8 @@ RBTree *processDictionary(char *filename)
   RBData *treeData;
 
   char *paraula, str[MAXCHAR];
+  
+  char *lineaFitxer;
 
   /* Allocate memory for tree */
   tree = (RBTree *) malloc(sizeof(RBTree));
@@ -420,6 +422,15 @@ void processTextFiles(char *filename, RBTree *tree)
 //rm -r fitxer.txt; for i in {1..3}; do ((time -p ./main < opcions.txt) 2>> fitxer.txt); done
 
 //Dinamica es mas rapida que estatica por defecto, el tamaño de hashsize afecta mucho en el tiempo de ejecucion, uno de 100 esta limitando la lista de hash, si se utiliza una hash mas grande influye mas el si es dinamico o estatico
+
+
+//Punto 3 y 4, la idea es hacer : 
+//#pragma omp task
+//Y que cada una de las tareas procese un archivo diferente.
+//La idea es pasarle solo el nombre del fichero a procesar
+//Multiples tasques processant en paralel els fitxers, y que multiples tasques puguin accedir a diferents fitxers al mateix temps
+//Si miramos el processplainfile, se pasa como parametro el nombre del fichero, con el fread del final se lee todo el fichero. 
+//El punt 3, pueden haber multiples hilos que puedan estar leyendo al mismo teimpo del fichero, la idea es, vamos a coger la parte de código que lee el fichero, se quita y se crea la tarea con todos los bytes leidos.Sacar fuera de processplainfile la seccion de leer el fichero y pasarle por parametro los bytes.
 
   for(i = 0; i < nfiles; i++) {
     /* Read line */
